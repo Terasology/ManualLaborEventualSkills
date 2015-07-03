@@ -2,5 +2,9 @@
   "EventualSkillRequirement": {
     "skillUrn": "ManualLaborEventualSkills:CraftingSkill",
     "level": 1
+  },
+  "MultipliesTimeWithSkill": {
+    "skillurn": "ManualLaborEventualSkills:AssemblingSkill",
+    "multiplier": 0.8
   }
 }

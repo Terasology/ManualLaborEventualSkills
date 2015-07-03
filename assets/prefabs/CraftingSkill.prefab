@@ -2,6 +2,6 @@
   "EventualSkillDescription": {
     "name": "Crafting",
     "description": "Allows crafting various things.",
-    "prerequisiteSkills": []
+    "prerequisiteSkills": {}
   }
 }
