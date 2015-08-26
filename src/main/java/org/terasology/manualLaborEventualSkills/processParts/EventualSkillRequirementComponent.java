@@ -20,7 +20,9 @@ import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.eventualSkills.components.EntityEventualSkillsComponent;
 import org.terasology.eventualSkills.systems.EventualSkillsManager;
+import org.terasology.eventualSkills.ui.EventualSkillsUIUtil;
 import org.terasology.registry.CoreRegistry;
+import org.terasology.rendering.nui.UIWidget;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
@@ -66,7 +68,10 @@ public class EventualSkillRequirementComponent implements Component, ProcessPart
     @Override
     public ProcessPartDescription getInputDescription() {
         EventualSkillsManager skillsManager = CoreRegistry.get(EventualSkillsManager.class);
-        return new ProcessPartDescription(skillsManager.getSkill(new ResourceUrn(skillUrn)).name + " " + level);
+        String skillDescription = skillsManager.getSkill(new ResourceUrn(skillUrn)).name + " " + level;
+        UIWidget widget = EventualSkillsUIUtil.createEventualSkillsIcon(new ResourceUrn(skillUrn));
+        widget.setTooltip(skillDescription);
+        return new ProcessPartDescription(skillDescription, widget);
     }
 
     @Override
