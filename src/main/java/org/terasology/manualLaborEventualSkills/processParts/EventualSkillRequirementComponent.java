@@ -15,6 +15,7 @@
  */
 package org.terasology.manualLaborEventualSkills.processParts;
 
+import com.google.common.collect.Lists;
 import org.terasology.assets.ResourceUrn;
 import org.terasology.entitySystem.Component;
 import org.terasology.entitySystem.entity.EntityRef;
@@ -26,6 +27,10 @@ import org.terasology.rendering.nui.UIWidget;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPart;
 import org.terasology.workstation.process.ProcessPartDescription;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class EventualSkillRequirementComponent implements Component, ProcessPart, DescribeProcess {
     public String skillUrn;
@@ -61,21 +66,18 @@ public class EventualSkillRequirementComponent implements Component, ProcessPart
     }
 
     @Override
-    public ProcessPartDescription getOutputDescription() {
-        return null;
+    public Collection<ProcessPartDescription> getOutputDescriptions() {
+        return Collections.emptyList();
     }
 
     @Override
-    public ProcessPartDescription getInputDescription() {
+    public Collection<ProcessPartDescription> getInputDescriptions() {
+        List<ProcessPartDescription> descriptions = Lists.newLinkedList();
         EventualSkillsManager skillsManager = CoreRegistry.get(EventualSkillsManager.class);
         String skillDescription = skillsManager.getSkill(new ResourceUrn(skillUrn)).name + " " + level;
         UIWidget widget = EventualSkillsUIUtil.createEventualSkillsIcon(new ResourceUrn(skillUrn));
         widget.setTooltip(skillDescription);
-        return new ProcessPartDescription(skillDescription, widget);
-    }
-
-    @Override
-    public int getComplexity() {
-        return 0;
+        descriptions.add(new ProcessPartDescription(null, skillDescription, widget));
+        return descriptions;
     }
 }
