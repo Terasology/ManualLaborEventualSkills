@@ -75,7 +75,7 @@ public class EventualSkillRequirementComponent implements Component, ProcessPart
         List<ProcessPartDescription> descriptions = Lists.newLinkedList();
         EventualSkillsManager skillsManager = CoreRegistry.get(EventualSkillsManager.class);
         String skillDescription = skillsManager.getSkill(new ResourceUrn(skillUrn)).name + " " + level;
-        UIWidget widget = EventualSkillsUIUtil.createEventualSkillsIcon(new ResourceUrn(skillUrn));
+        UIWidget widget = EventualSkillsUIUtil.createEventualSkillsIcon(new ResourceUrn(skillUrn), level);
         widget.setTooltip(skillDescription);
         descriptions.add(new ProcessPartDescription(null, skillDescription, widget));
         return descriptions;

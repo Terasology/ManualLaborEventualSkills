@@ -1,6 +1,7 @@
 {
   "EventualSkillDescription": {
     "name": "Assembling",
+    "shortName": "ASBL",
     "description": "Reduces assembly time by 20% each level.",
     "prerequisiteSkills": {
       "ManualLaborEventualSkills:CraftingSkill": 3

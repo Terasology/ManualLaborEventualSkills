@@ -1,6 +1,7 @@
 {
   "EventualSkillDescription": {
     "name": "Crafting",
+    "shortName": "CRFT",
     "description": "Allows crafting various things.",
     "prerequisiteSkills": {}
   }
