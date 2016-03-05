@@ -1,0 +1,10 @@
+{
+  "EventualSkillDescription": {
+    "name": "Running",
+    "shortName": "RUN",
+    "description": "Improves walking and running speed",
+    "prerequisiteSkills": {
+      "ManualLaborEventualSkills:FitnessSkill": 3
+    }
+  }
+}

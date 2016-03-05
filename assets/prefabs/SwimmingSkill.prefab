@@ -1,0 +1,10 @@
+{
+  "EventualSkillDescription": {
+    "name": "Swimming",
+    "shortName": "SWM",
+    "description": "Improves walking and running speed",
+    "prerequisiteSkills": {
+      "ManualLaborEventualSkills:FitnessSkill": 3
+    }
+  }
+}

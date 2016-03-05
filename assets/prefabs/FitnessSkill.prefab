@@ -1,0 +1,8 @@
+{
+  "EventualSkillDescription": {
+    "name": "Fitness",
+    "shortName": "FIT",
+    "description": "Improves movement speed",
+    "prerequisiteSkills": {}
+  }
+}
