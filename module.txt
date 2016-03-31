@@ -1,18 +1,18 @@
 {
     "id" : "ManualLaborEventualSkills",
-    "version" : "0.1.0-SNAPSHOT",
+    "version" : "1.0.0-SNAPSHOT",
     "author" : "Josharias",
     "displayName" : "ManualLabor - Eventual Skills",
     "description" : "Adds skill requirements to Manual Labor processes",
     "dependencies" : [
         {
-            "id": "Workstation", "minVersion": "0.1.0"
+            "id": "Workstation", "minVersion": "1.0.0"
         },
         {
-            "id": "ManualLabor", "minVersion": "0.1.0"
+            "id": "ManualLabor", "minVersion": "1.0.0"
         },
         {
-            "id": "EventualSkills", "minVersion": "0.1.0"
+            "id": "EventualSkills", "minVersion": "1.0.0"
         }
     ]
 }

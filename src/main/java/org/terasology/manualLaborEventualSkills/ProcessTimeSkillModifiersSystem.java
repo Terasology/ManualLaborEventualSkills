@@ -15,35 +15,24 @@
  */
 package org.terasology.manualLaborEventualSkills;
 
-import org.terasology.utilities.Assets;
 import org.terasology.assets.ResourceUrn;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
-import org.terasology.entitySystem.prefab.Prefab;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
-import org.terasology.eventualSkills.components.EntityEventualSkillsComponent;
-import org.terasology.manualLabor.events.ModifyProcessingTimeEvent;
+import org.terasology.eventualSkills.components.EntitySkillsComponent;
 import org.terasology.manualLaborEventualSkills.components.MultipliesTimeWithSkillComponent;
-import org.terasology.workstation.component.ProcessDefinitionComponent;
-
-import java.util.Optional;
+import org.terasology.workstation.processPart.ProcessEntityGetDurationEvent;
 
 @RegisterSystem
 public class ProcessTimeSkillModifiersSystem extends BaseComponentSystem {
     @ReceiveEvent
-    public void onModifyProcessingTime(ModifyProcessingTimeEvent event, EntityRef entityRef, EntityEventualSkillsComponent skillsComponent) {
-        ProcessDefinitionComponent processDefinitionComponent = event.getProcessEntity().getComponent(ProcessDefinitionComponent.class);
-        if (processDefinitionComponent != null) {
-            Optional<Prefab> processDefinition = Assets.getPrefab(processDefinitionComponent.processType);
-            if (processDefinition.isPresent()) {
-                MultipliesTimeWithSkillComponent multipliesTimeWithSkillComponent = processDefinition.get().getComponent(MultipliesTimeWithSkillComponent.class);
-                if (multipliesTimeWithSkillComponent != null) {
-                    int level = skillsComponent.getSkillLevel(new ResourceUrn(multipliesTimeWithSkillComponent.skillUrn));
-                    if (level > 0) {
-                        event.multiply(((Double) Math.pow(multipliesTimeWithSkillComponent.multiplier, level)).floatValue());
-                    }
-                }
+    public void onModifyProcessingTime(ProcessEntityGetDurationEvent event, EntityRef processEntity, MultipliesTimeWithSkillComponent multipliesTimeWithSkillComponent) {
+        EntitySkillsComponent skillsComponent = event.getInstigator().getComponent(EntitySkillsComponent.class);
+        if (skillsComponent != null) {
+            int level = skillsComponent.getSkillLevel(new ResourceUrn(multipliesTimeWithSkillComponent.skillUrn));
+            if (level > 0) {
+                event.multiply(((Double) Math.pow(multipliesTimeWithSkillComponent.multiplier, level)).floatValue());
             }
         }
     }

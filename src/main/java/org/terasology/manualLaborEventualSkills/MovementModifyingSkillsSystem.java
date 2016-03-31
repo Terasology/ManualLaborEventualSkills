@@ -20,13 +20,13 @@ import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
-import org.terasology.eventualSkills.components.EntityEventualSkillsComponent;
+import org.terasology.eventualSkills.components.EntitySkillsComponent;
 import org.terasology.logic.characters.GetMaxSpeedEvent;
 
 @RegisterSystem
 public class MovementModifyingSkillsSystem extends BaseComponentSystem {
     @ReceiveEvent
-    public void modifySpeed(GetMaxSpeedEvent event, EntityRef entityRef, EntityEventualSkillsComponent skillsComponent) {
+    public void modifySpeed(GetMaxSpeedEvent event, EntityRef entityRef, EntitySkillsComponent skillsComponent) {
         switch (event.getMovementMode()) {
             case CLIMBING:
             case SWIMMING:
