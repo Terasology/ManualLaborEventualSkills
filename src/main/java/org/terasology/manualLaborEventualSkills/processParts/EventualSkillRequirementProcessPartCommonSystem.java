@@ -15,7 +15,6 @@
  */
 package org.terasology.manualLaborEventualSkills.processParts;
 
-import org.terasology.assets.ResourceUrn;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
@@ -23,6 +22,7 @@ import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.eventualSkills.components.EntitySkillsComponent;
 import org.terasology.eventualSkills.systems.EventualSkillsManager;
 import org.terasology.eventualSkills.ui.EventualSkillsUIUtil;
+import org.terasology.gestalt.assets.ResourceUrn;
 import org.terasology.nui.UIWidget;
 import org.terasology.registry.In;
 import org.terasology.workstation.process.ProcessPartDescription;
