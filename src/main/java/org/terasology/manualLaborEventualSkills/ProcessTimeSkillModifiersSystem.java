@@ -16,10 +16,10 @@
 package org.terasology.manualLaborEventualSkills;
 
 import org.terasology.assets.ResourceUrn;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.entitySystem.event.ReceiveEvent;
-import org.terasology.entitySystem.systems.BaseComponentSystem;
-import org.terasology.entitySystem.systems.RegisterSystem;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.event.ReceiveEvent;
+import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
+import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.eventualSkills.components.EntitySkillsComponent;
 import org.terasology.manualLaborEventualSkills.components.MultipliesTimeWithSkillComponent;
 import org.terasology.workstation.processPart.ProcessEntityGetDurationEvent;

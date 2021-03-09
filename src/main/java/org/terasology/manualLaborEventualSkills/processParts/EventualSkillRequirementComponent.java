@@ -15,7 +15,7 @@
  */
 package org.terasology.manualLaborEventualSkills.processParts;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 public class EventualSkillRequirementComponent implements Component {
     public String skillUrn;

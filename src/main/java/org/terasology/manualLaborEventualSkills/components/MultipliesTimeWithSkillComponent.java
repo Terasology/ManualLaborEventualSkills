@@ -15,7 +15,7 @@
  */
 package org.terasology.manualLaborEventualSkills.components;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 public class MultipliesTimeWithSkillComponent implements Component {
     public String skillUrn;
