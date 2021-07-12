@@ -7,4 +7,10 @@ import org.terasology.gestalt.entitysystem.component.Component;
 public class MultipliesTimeWithSkillComponent implements Component<MultipliesTimeWithSkillComponent> {
     public String skillUrn;
     public float multiplier;
+
+    @Override
+    public void copy(MultipliesTimeWithSkillComponent other) {
+        this.multiplier = other.multiplier;
+        this.skillUrn = other.skillUrn;
+    }
 }
