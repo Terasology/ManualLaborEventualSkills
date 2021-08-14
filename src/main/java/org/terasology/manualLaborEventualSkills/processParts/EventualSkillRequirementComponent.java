@@ -9,7 +9,7 @@ public class EventualSkillRequirementComponent implements Component<EventualSkil
     public int level;
 
     @Override
-    public void copy(EventualSkillRequirementComponent other) {
+    public void copyFrom(EventualSkillRequirementComponent other) {
         this.skillUrn = other.skillUrn;
         this.level = other.level;
     }

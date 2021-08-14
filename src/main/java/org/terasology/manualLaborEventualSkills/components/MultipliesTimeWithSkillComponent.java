@@ -9,7 +9,7 @@ public class MultipliesTimeWithSkillComponent implements Component<MultipliesTim
     public float multiplier;
 
     @Override
-    public void copy(MultipliesTimeWithSkillComponent other) {
+    public void copyFrom(MultipliesTimeWithSkillComponent other) {
         this.multiplier = other.multiplier;
         this.skillUrn = other.skillUrn;
     }
