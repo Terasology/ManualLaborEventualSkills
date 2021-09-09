@@ -16,11 +16,11 @@
 package org.terasology.manualLaborEventualSkills;
 
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.eventualSkills.components.EntitySkillsComponent;
 import org.terasology.gestalt.assets.ResourceUrn;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.manualLaborEventualSkills.components.MultipliesTimeWithSkillComponent;
 import org.terasology.workstation.processPart.ProcessEntityGetDurationEvent;
 
